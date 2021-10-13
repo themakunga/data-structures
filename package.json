@@ -6,6 +6,9 @@
   "author": "Nicolas Martinez V. <nmartinezv@icloud.com>",
   "license": "MIT",
   "types": "src",
+  "engines": {
+    "node": "14"
+  },
   "scripts": {
     "build": "tsc -p",
     "lint": "eslint --ext .ts ./src",
