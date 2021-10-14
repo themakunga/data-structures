@@ -149,6 +149,8 @@ describe('Linked List - simple number', () => {
       list.addTail(5);
       list.addTail(6);
 
+      expect(list.deleteAt(-12)).toBe(null);
+      expect(list.deleteAt(12)).toBe(null);
       // 1-2-3-4-5-6
 
       const val = list.deleteAt(0);

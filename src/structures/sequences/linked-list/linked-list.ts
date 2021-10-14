@@ -213,7 +213,7 @@ export default class LinkedList<T> implements Iterable<T> {
 
     if (i === 0) return this.deleteHead();
     if (i === this.size() - 1) return this.deleteTail();
-    if (i < 0 || i >= this.list.size) return null;
+    if (i < 0 || i >= this.size()) return null;
 
     let j = 0;
     let cur = this.list.head;
