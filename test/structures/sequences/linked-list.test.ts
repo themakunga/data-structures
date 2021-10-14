@@ -224,30 +224,30 @@ describe('Linked List - simple number', () => {
     });
   });
 
-  // describe('iterator', () => {
-  //   it('is iterable', () => {
-  //     const array = [1, 2, 3];
-  //     list.fromArray(array);
+  describe('iterator', () => {
+    it('is iterable', () => {
+      const array = [1, 2, 3];
+      list.fromArray(array);
 
-  //     let i = 0;
-  //     // eslint-disable-next-line no-restricted-syntax
-  //     for (const n of list) {
-  //       expect(n).toBe(array[i]);
-  //       i += 1;
-  //     }
-  //   });
+      let i = 0;
+      // eslint-disable-next-line no-restricted-syntax
+      for (const n of list) {
+        expect(n).toBe(array[i]);
+        i += 1;
+      }
+    });
 
-  //   it('does not iterate over an empty list', () => {
-  //     let count = 0;
+    it('does not iterate over an empty list', () => {
+      let count = 0;
 
-  //     // eslint-disable-next-line
-  //     for (const n of list) {
-  //       count += 1;
-  //     }
+      // eslint-disable-next-line
+      for (const n of list) {
+        count += 1;
+      }
 
-  //     expect(count).toBe(0);
-  //   });
-  // });
+      expect(count).toBe(0);
+    });
+  });
 });
 
 describe('Linked list - complex object', () => {

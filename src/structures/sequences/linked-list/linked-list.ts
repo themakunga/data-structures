@@ -88,23 +88,35 @@ export default class LinkedList<T> implements Iterable<T> {
    * @return {boolean}
    */
   addAt(i: number, val: T): boolean {
-    if (i === 0) return this.addHead(val);
-    if (i === this.size()) return this.addTail(val);
+    if (i === 0) {
+      return this.addHead(val);
+    }
 
-    if (i < 0 || i > this.size() || !this.list) return false;
-    let current = this.list.head;
+    if (i === this.size()) {
+      return this.addTail(val);
+    }
 
+    if (i < 0 || i >= this.size() || !this.list) return false;
+
+    let cur = this.list.head;
+    // traverse to index
     // eslint-disable-next-line no-plusplus
     for (let j = 0; j < i - 1; j++) {
-      current = current.next!;
+      cur = cur.next! // eslint-disable-line
     }
 
     const newNode = new LinkedListNode(val);
 
-    current.next!.prev = newNode;
-    newNode.prev = current;
-    current.next = newNode;
+    // link next node
+    cur.next!.prev = newNode // eslint-disable-line
+    newNode.next = cur.next;
+
+    // link prev node
+    newNode.prev = cur;
+    cur.next = newNode;
+
     this.list.size += 1;
+
     return true;
   }
 
@@ -223,7 +235,7 @@ export default class LinkedList<T> implements Iterable<T> {
   }
 
   fromArray(A: T[]): LinkedList<T> {
-    A.forEach((a) => {
+    A.forEach((a: T) => {
       this.addTail(a);
     });
     return this;
