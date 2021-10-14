@@ -10,7 +10,7 @@
     "node": "14"
   },
   "scripts": {
-    "build": "tsc -p",
+    "build": "tsc",
     "lint": "eslint --ext .ts ./src",
     "test": "jest --config jest.config.ts",
     "semantic-release": "semantic-release",
